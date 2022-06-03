@@ -1,0 +1,498 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#6200ee"><meta name="author" content="god23bin"><meta name="copyright" content="god23bin"><meta name="generator" content="Hexo 6.1.0"><meta name="theme" content="hexo-theme-yun"><title>jQuery-笔记 | 方圆-起名字真是个难题</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.2.4/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/mini.global.js"></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  Yun.utils.renderKatex();
+});</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer type="module"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script><link rel="icon" type="image/png" href="/favicon.ico"><link rel="mask-icon" href="/favicon.ico" color="#6200ee"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"god23bin.github.io","root":"/","title":["方圆","可方","可圆"],"version":"1.8.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]},"vendors":{"darken":"https://cdn.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><meta name="description" content="jQuery 笔记记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery-笔记">
+<meta property="og:url" content="https://god23bin.github.io/posts/b26d2e2d/index.html">
+<meta property="og:site_name" content="方圆-起名字真是个难题">
+<meta property="og:description" content="jQuery 笔记记录">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-02-10T13:12:33.000Z">
+<meta property="article:modified_time" content="2022-06-03T13:49:33.699Z">
+<meta property="article:author" content="god23bin">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary"><script>(function() {
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="god23bin"><img width="96" loading="lazy" src="https://raw.githubusercontent.com/god23bin/pic-bed/master/img/20220516145418.jpeg" alt="god23bin"><span class="site-author-status" title="今天不学习，明天变垃圾">😆</span></a><div class="site-author-name"><a href="/about/">god23bin</a></div><a class="site-name" href="/about/site.html">方圆-起名字真是个难题</a><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">26</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">27</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/god23bin" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="god23bin@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=77844313" title="网易云音乐" target="_blank" style="color:#C10D0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/341183781" title="哔哩哔哩动画" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我喜欢的大佬们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a><a class="links-item hty-icon-button" href="/girls/" title="我的女神天使们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-women-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E4%BD%93%E9%AA%8C-Learn-By-Imooc"><span class="toc-text">初体验-Learn By Imooc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E5%AF%B9%E8%B1%A1%E4%B8%8EDOM%E5%AF%B9%E8%B1%A1"><span class="toc-text">jQuery对象与DOM对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery%E5%AF%B9%E8%B1%A1%E8%BD%AC%E5%8C%96%E6%88%90DOM%E5%AF%B9%E8%B1%A1"><span class="toc-text">jQuery对象转化成DOM对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E5%AF%B9%E8%B1%A1%E8%BD%AC%E5%8C%96%E6%88%90jQuery%E5%AF%B9%E8%B1%A1"><span class="toc-text">DOM对象转化成jQuery对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">jQuery选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">id选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">类选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0-x2F-%E6%A0%87%E7%AD%BE-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">元素&#x2F;标签-选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88-%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%89"><span class="toc-text">全选择器（*选择器）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E7%BA%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">层级选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%AD%9B%E9%80%89-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">基本筛选-选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%AD%9B%E9%80%89-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">内容筛选-选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">可见性选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">属性选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">子元素选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">表单元素选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E7%AD%9B%E9%80%89-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">表单元素属性筛选-选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E9%80%89%E6%8B%A9%E5%99%A8-this"><span class="toc-text">特殊选择器-this</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery%E5%B1%9E%E6%80%A7%E5%92%8C%E6%A0%B7%E5%BC%8F"><span class="toc-text">jQuery属性和样式</span></a></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/Ajax/" style="font-size: 12px; color: #999">Ajax</a> <a href="/tags/Android/" style="font-size: 19.2px; color: #5c8cb8">Android</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 26.4px; color: #1f7fd7">C语言</a> <a href="/tags/ES/" style="font-size: 12px; color: #999">ES</a> <a href="/tags/Element-UI/" style="font-size: 12px; color: #999">Element UI</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #999">Hexo</a> <a href="/tags/Java/" style="font-size: 15.6px; color: #7a92a9">Java</a> <a href="/tags/Js/" style="font-size: 12px; color: #999">Js</a> <a href="/tags/Json/" style="font-size: 12px; color: #999">Json</a> <a href="/tags/Node-js/" style="font-size: 12px; color: #999">Node.js</a> <a href="/tags/Vue-js/" style="font-size: 12px; color: #999">Vue.js</a> <a href="/tags/jQuery/" style="font-size: 12px; color: #999">jQuery</a> <a href="/tags/%E5%85%A5%E9%97%A8/" style="font-size: 26.4px; color: #1f7fd7">入门</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0/" style="font-size: 26.4px; color: #1f7fd7">函数实现</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 30px; color: #0078e7">前端</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 22.8px; color: #3d85c8">后端</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 12px; color: #999">安全</a> <a href="/tags/%E5%AE%B9%E5%99%A8/" style="font-size: 12px; color: #999">容器</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 12px; color: #999">教程</a> <a href="/tags/%E6%B3%9B%E5%9E%8B/" style="font-size: 12px; color: #999">泛型</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#6200ee;"><link itemprop="mainEntityOfPage" href="https://god23bin.github.io/posts/b26d2e2d/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="god23bin"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="方圆-起名字真是个难题"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">jQuery-笔记</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="Created: 2020-02-10 13:12:33" itemprop="dateCreated datePublished" datetime="2020-02-10T13:12:33+00:00">2020-02-10</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="Modified: 2022-06-03 13:49:33" itemprop="dateModified" datetime="2022-06-03T13:49:33+00:00">2022-06-03</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="Word count in article">4.5k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="Reading time">16m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%89%8D%E7%AB%AF/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">前端</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E7%AC%94%E8%AE%B0/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">笔记</span></a><a class="tag-item" href="/tags/%E5%89%8D%E7%AB%AF/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">前端</span></a><a class="tag-item" href="/tags/jQuery/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">jQuery</span></a></span></div><div class="post-author"><span class="author-name">god23bin</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><h2 id="初体验-Learn-By-Imooc"><a href="#初体验-Learn-By-Imooc" class="headerlink" title="初体验-Learn By Imooc"></a>初体验-Learn By Imooc</h2><p>当页面加载完成后，在页面中以居中的方式显示“您好！通过慕课网学习 jQuery 才是最佳的途径”字样。</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>第一个简单的jQuery程序<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">div</span><span class="token punctuation">&#123;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span>8px 0px<span class="token punctuation">;</span>
+            <span class="token property">font-size</span><span class="token punctuation">:</span>12px<span class="token punctuation">;</span>
+            <span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
+            <span class="token property">border</span><span class="token punctuation">:</span>1px solid #888<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+            <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">"您好！通过慕课网学习jQuery才是最佳的途径。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
+
+<blockquote>
+<p>代码分析：</p>
+<p> $(document).ready 的作用是等页面的文档（document）中的节点都加载完毕后，再执行后续的代码，因为我们在执行代码的时候，可能会依赖页面的某一个元素，我们要确保这个元素真正的的被加载完毕后才能正确的使用。</p>
+</blockquote>
+<hr>
+<h3 id="jQuery对象与DOM对象"><a href="#jQuery对象与DOM对象" class="headerlink" title="jQuery对象与DOM对象"></a>jQuery对象与DOM对象</h3><p>对于才开始接触jQuery库的初学者，我们需要清楚认识一点：</p>
+<p><strong>jQuery对象与DOM对象是不一样的</strong></p>
+<p>可能一时半会分不清楚哪些是jQuery对象，哪些是DOM对象，下面重点介绍一下jQuery对象，以及两者相互间的转换。</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 通过一个简单的例子，简单区分下jQuery对象与DOM对象： --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”imooc”</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 
+我们要获取页面上这个id为imooc的p元素，然后给这个文本节点增加一段文字：“您好！通过慕课网学习jQuery才是最佳的途径”，并且让文字颜色变成红色。
+--></span>
+</code></pre>
+
+<ul>
+<li><p>普通处理，通过标准JavaScript处理：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> p <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'imooc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'您好！通过慕课网学习jQuery才是最佳的途径'</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 通过原生DOM模型提供的document.getElementById(“imooc”) 方法获取的DOM元素就是一个DOM对象，再通过innerHTML与style属性处理文本与颜色。</span>
+</code></pre>
+</li>
+<li><p>jQuery的处理：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> $p <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#imooc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$p<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">'您好！通过慕课网学习jQuery才是最佳的途径'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'color'</span><span class="token punctuation">,</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 通过$('#imooc')方法会得到一个$p的jQuery对象，$p是一个类数组对象。这个对象里面包含了DOM对象的信息，然后封装了很多操作方法，调用自己的方法html与css，得到的效果与标准的JavaScript处理结果是一致的。</span>
+</code></pre></li>
+</ul>
+<p>通过标准的JavaScript操作DOM与jQuery操作DOM的对比，我们不难发现：</p>
+<ol>
+<li>通过jQuery方法包装后的对象，是一个类数组对象。它与DOM对象完全不同，唯一相似的是它们都能操作DOM。</li>
+<li>通过jQuery处理DOM的操作，可以让开发者更专注业务逻辑的开发，而不需要我们具体知道哪个DOM节点有那些方法，也不需要关心不同浏览器的兼容性问题，我们通过jQuery提供的API进行开发，代码也会更加精短。</li>
+</ol>
+<hr>
+<h3 id="jQuery对象转化成DOM对象"><a href="#jQuery对象转化成DOM对象" class="headerlink" title="jQuery对象转化成DOM对象"></a>jQuery对象转化成DOM对象</h3><p>jQuery库本质上还是JavaScript代码，它只是对JavaScript语言进行包装处理，为的是提供更好更方便快捷的DOM处理与开发中经常使用的功能。我们使用jQuery的同时也能混合JavaScript原生代码一起使用。在很多场景中，我们需要jQuery与DOM能够相互的转换，它们都是可以操作的DOM元素，<strong>jQuery是一个类数组对象，而DOM对象就是一个单独的DOM元素</strong>。</p>
+<p><strong>如何把jQuery对象转成DOM对象？</strong></p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 利用数组下标的方式读取到jQuery中的DOM对象</span>
+
+<span class="token operator">&lt;</span>div<span class="token operator">></span>元素一<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span>div<span class="token operator">></span>元素二<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span>div<span class="token operator">></span>元素三<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+<span class="token keyword">var</span> $div <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span> <span class="token comment">//jQuery对象</span>
+<span class="token keyword">var</span> div <span class="token operator">=</span> $div<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment">//转化成DOM对象</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span> <span class="token comment">//操作dom对象的属性</span></code></pre>
+
+<p>用jQuery找到所有的div元素（3个），因为jQuery对象也是一个数组结构，可以通过数组下标索引找到第一个div元素，通过返回的div对象，调用它的style属性修改第一个div元素的颜色。这里需要注意的一点是<strong>，数组的索引是从0开始的，也就是第一个元素下标是0</strong></p>
+<p><strong>最主要的是，我们要会通过jQuery自带的get()方法：</strong></p>
+<p>jQuery对象自身提供一个.get() 方法允许我们直接访问jQuery对象中相关的DOM节点，get方法中提供一个元素的索引</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> $div <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span> <span class="token comment">//jQuery对象</span>
+<span class="token keyword">var</span> div <span class="token operator">=</span> $div<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">//通过get方法，转化成DOM对象</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span> <span class="token comment">//操作dom对象的属性</span></code></pre>
+
+<p>其实我们翻开源码，看看就知道了，get方法就是利用的第一种方式处理的，只是包装成一个get让开发者更直接方便的使用。</p>
+<hr>
+<h3 id="DOM对象转化成jQuery对象"><a href="#DOM对象转化成jQuery对象" class="headerlink" title="DOM对象转化成jQuery对象"></a>DOM对象转化成jQuery对象</h3><p>相比较jQuery转化成DOM，开发中更多的情况是把一个DOM对象加工成jQuery对象。</p>
+<p>$(参数)是一个多功能的方法，通过传递不同的参数而产生不同的作用。</p>
+<p>如果传递给$(DOM)函数的参数是一个DOM对象，jQuery方法会把这个DOM对象给包装成一个新的jQuery对象。</p>
+<p>通过$(DOM)方法将普通的DOM对象加工成jQuery对象之后，我们就可以调用jQuery的方法了。</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>div<span class="token operator">></span>元素一<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span>div<span class="token operator">></span>元素二<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span>div<span class="token operator">></span>元素三<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+<span class="token keyword">var</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//dom对象</span>
+<span class="token keyword">var</span> $div <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span>div<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//jQuery对象</span>
+<span class="token keyword">var</span> $first <span class="token operator">=</span> $div<span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//找到第一个div元素</span>
+$first<span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'color'</span><span class="token punctuation">,</span> <span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//给第一个元素设置颜色</span>
+
+<span class="token comment">// 通过getElementsByTagName获取到所有div节点的元素，结果是一个dom合集对象，不过这个对象是一个数组合集(3个div元素)。通过$(div)方法转化成jQuery对象，通过调用jQuery对象中的first与css方法查找第一个元素并且改变其颜色。</span></code></pre>
+
+<hr>
+<h2 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h2><p>页面的任何操作都需要节点的支撑，开发者如何快速高效的找到指定的节点也是前端开发中的一个重点。jQuery提供了一系列的选择器帮助开发者达到这一目的，让开发者可以更少的处理复杂选择过程与性能优化，更多专注业务逻辑的编写。</p>
+<p>jQuery几乎支持主流的css1~css3选择器的写法，我们从最简单的也是最常用的开始学起。</p>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p>id选择器：一个用来查找的ID，即元素的id属性</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>id选择器也是基本的选择器，jQuery内部使用JavaScript函数document.getElementById()来处理ID的获取。原生语法的支持总是非常高效的，所以在操作DOM的获取上，如果能采用id的话尽然考虑用这个选择器</p>
+<p>值得注意：<strong>id是唯一的，每个id值在一个页面中只能使用一次。如果多个元素分配了相同的id，将只匹配该id选择集合的第一个DOM元素。但这种行为不应该发生;有超过一个元素的页面使用相同的id是无效的。</strong></p>
+<hr>
+<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>类选择器，顾名思义，通过class样式类名来获取节点。</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".class"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>类选择器，相对id选择器来说，效率相对会低一点，但是优势就是可以多选</p>
+<p>同样的jQuery在实现上，对于类选择器，如果浏览器支持，jQuery使用JavaScript的原生getElementsByClassName()函数来实现的。</p>
+<p><strong>链式调用</strong>，$(“.imooc”).css()方法内部肯定是带了一个隐式的循环处理，所以使用jQuery选择节点，不仅仅只是选择上的简单，同时还增加很多关联的便利操作，后续我们还会慢慢的学到其他的优势。</p>
+<hr>
+<h3 id="元素-x2F-标签-选择器"><a href="#元素-x2F-标签-选择器" class="headerlink" title="元素&#x2F;标签-选择器"></a>元素&#x2F;标签-选择器</h3><p>元素选择器：根据给定（html）标签名称（比如p标签，hr标签，h1标签，div标签这些）选择所有的元素</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 第一组：通过getElementsByTagName方法得到页面所有的&lt;div>元素</span>
+<span class="token keyword">var</span> divs <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// divs是dom合集对象，可以干嘛？那么做你想做的事，比如通过循环给每一个合集中的&lt;div>元素赋予新的border样式</span>
+
+<span class="token comment">// 第二组：同样的效果，$("p")选取所有的&lt;p>元素，通过css方法直接赋予样式</span>
+<span class="token keyword">var</span> ps <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 同理，获取了所有的p标签，即所有的&lt;p>元素</span>
+</code></pre>
+
+<hr>
+<h3 id="全选择器（-选择器）"><a href="#全选择器（-选择器）" class="headerlink" title="全选择器（*选择器）"></a>全选择器（*选择器）</h3><p>在CSS中，经常会在第一行写下这样一段样式</p>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">\*</span> <span class="token punctuation">&#123;</span><span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><span class="token punctuation">&#125;</span></code></pre>
+
+<p>通配符 * 意味着给所有的元素设置默认的边距。jQuery中我们也可以通过传递 * 选择器来选中文档页面中的元素。</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">$</span><span class="token punctuation">(</span> <span class="token string">"*"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<hr>
+<h3 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h3><p>文档中的所有的节点之间都是有这样或者那样的关系。我们可以把节点之间的关系可以用传统的家族关系来描述，可以把文档树当作一个家谱，那么节点与节点直接就会存在父子，兄弟，祖孙的关系了。</p>
+<p>选择器中的层级选择器就是用来处理这种关系，即<strong>子元素 后代元素 兄弟元素 相邻元素</strong></p>
+<p>通过一个列表，对比层级选择器的区别</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>层级选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>子选择器</td>
+<td>$(“parent &gt; child”)</td>
+<td>选择所有”parent”元素中指定的”child”的直接子元素</td>
+</tr>
+<tr>
+<td>祖先后代选择器</td>
+<td>$(“ancestor descendant”)</td>
+<td>选择给定的祖先的所有后代元素<br/>一个元素的后代可能是<br/>该元素的一个孩子、孙子、曾孙等等。</td>
+</tr>
+<tr>
+<td>相邻兄弟选择器</td>
+<td>$(“prev + next”)</td>
+<td>选择所有紧跟在”prev”元素后的”next”元素</td>
+</tr>
+<tr>
+<td>一般兄弟选择器</td>
+<td>$(“prev ~ siblings”)</td>
+<td></td>
+</tr>
+</tbody></table>
+<ol>
+<li>层级选择器都有一个参考节点，位置在前面的就是参考节点</li>
+<li>后代选择器包含子选择器的选择的内容</li>
+<li>一般兄弟选择器包含相邻兄弟选择的内容</li>
+<li>相邻兄弟选择器和一般兄弟选择器所选择到的元素，必须在同一个父元素下</li>
+</ol>
+<hr>
+<h3 id="基本筛选-选择器"><a href="#基本筛选-选择器" class="headerlink" title="基本筛选-选择器"></a>基本筛选-选择器</h3><p>很多时候我们不能直接通过基本选择器与层级选择器找到我们想要的元素，为此jQuery提供了一系列的筛选选择器用来更快捷的找到所需的DOM元素。筛选选择器很多都不是CSS的规范，而是jQuery自己为了开发者的便利延展出来的选择器</p>
+<p><strong>基本筛选选择器针对的都是元素DOM节点</strong></p>
+<p>筛选选择器的用法与CSS中的伪元素相似，<strong>选择器用冒号“：”开头</strong>，通过一个列表，看看基本筛选器的描述：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(“:first”)</td>
+<td>匹配第一个元素</td>
+</tr>
+<tr>
+<td>$(“:last”)</td>
+<td>匹配最后一个元素</td>
+</tr>
+<tr>
+<td>$(“:not(selector)”)</td>
+<td>一个用来过滤的选择器，选择所有元素去除不匹配给定的选择器元素</td>
+</tr>
+<tr>
+<td>$(“:eq(index)”)</td>
+<td>选择匹配的<strong>集合中</strong>索引值为index的元素</td>
+</tr>
+<tr>
+<td>$( “:gt(index)”)</td>
+<td>选择匹配的<strong>集合中</strong>所有大于给定index(索引值)的元素</td>
+</tr>
+<tr>
+<td>$(“:even”)</td>
+<td>选择索引值为偶数的元素，从0开始计数</td>
+</tr>
+<tr>
+<td>$(“:odd”)</td>
+<td>选择索引值为奇数的元素，从0开始计数</td>
+</tr>
+<tr>
+<td>$( “:lt(index)”)</td>
+<td>选择匹配集合中所有索引值小于给定index参数的元素</td>
+</tr>
+<tr>
+<td>$(“:header”)</td>
+<td>选择所有标题元素，像h1,h2,h3等</td>
+</tr>
+<tr>
+<td>$(“:lang(language)”)</td>
+<td>选择指定语言的所有元素</td>
+</tr>
+<tr>
+<td>$(“:root”)</td>
+<td>选择i该文档的根元素</td>
+</tr>
+<tr>
+<td>$(“:animated”)</td>
+<td>选择所有正在执行动画效果的元素</td>
+</tr>
+</tbody></table>
+<ol>
+<li>:eq(), :lt(), :gt(), :even, :odd 用来筛选他们前面的匹配表达式的集合元素，根据之前匹配的元素在进一步筛选，注意jQuery合集都是从0开始索引</li>
+<li>gt是一个段落筛选，从指定索引的下一个开始，gt(1) 实际从2开始</li>
+</ol>
+<h3 id="内容筛选-选择器"><a href="#内容筛选-选择器" class="headerlink" title="内容筛选-选择器"></a>内容筛选-选择器</h3><p>基本筛选选择器针对的都是元素DOM节点，如果我们要通过内容来过滤，jQuery也提供了一组内容筛选选择器，当然其规则也会体现在它所包含的子元素或者文本内容上。</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(“:contains(text)”)</td>
+<td>选择所有包含指定文本的元素</td>
+</tr>
+<tr>
+<td>$(“:parent”)</td>
+<td>选择所有含子元素或者文本的元素</td>
+</tr>
+<tr>
+<td>$(“:empty”)</td>
+<td>选择所有不含子元素的元素（包含文本节点)</td>
+</tr>
+<tr>
+<td>$(“:has(selector)”)</td>
+<td>选择元素中至少包含指定选择器的元素</td>
+</tr>
+</tbody></table>
+<ol>
+<li>:contains与:has都有查找的意思，但是contains查找包含“指定文本”的元素，has查找包含“指定元素”的元素</li>
+<li>如果:contains匹配的文本包含在元素的子元素中，同样认为是符合条件的。</li>
+<li>:parent与:empty是相反的，两者所涉及的子元素，包括文本节点</li>
+</ol>
+<hr>
+<h3 id="可见性选择器"><a href="#可见性选择器" class="headerlink" title="可见性选择器"></a>可见性选择器</h3><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><p>属性选择器让你可以基于属性来定位一个元素。</p>
+<p>可以只指定该元素的某个属性，这样所有使用该属性而不管它的值，这个元素都将被定位，也可以更加明确并定位在这些属性上使用特定值的元素，这就是属性选择器展示它们的威力的地方。</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(“[attribute|&#x3D;’value’]”)</td>
+<td>选择指定属性值等于给定字符串或以该文字串为前缀<br>(该字符串后跟—个连字符”-“)的元素</td>
+</tr>
+<tr>
+<td><em><em>$(“[attribute</em> &#x3D;’value]”)</em>*</td>
+<td>选择指定属性具有包含一个给定的子字符串的元素<br>(选择给定的属性是以包含某些值的元素)</td>
+</tr>
+<tr>
+<td>$(“[attribute~&#x3D;’value’]”)</td>
+<td>选择指定属性用空格分隔的值中包含一个给定值的元素</td>
+</tr>
+<tr>
+<td><strong>$(“[attribute&#x3D;’value’]”)</strong></td>
+<td>选择指定属性是给定值的元素</td>
+</tr>
+<tr>
+<td>$(“[attribute!&#x3D;’value’]”)</td>
+<td>选择不存在指定属性，或者指定的属性值不等于给定值的元素</td>
+</tr>
+<tr>
+<td>$(“[attribute &#x3D;’value’]”)</td>
+<td>选择指定屈性是以给定字符串开始的元素</td>
+</tr>
+<tr>
+<td>$(“[attribute$&#x3D;’value’]”)</td>
+<td>选择指定属性是以给定值结尾的元素，这个比较是区分大小写的</td>
+</tr>
+<tr>
+<td>$(“[attribute]”)</td>
+<td>选择所有具有指定属性的元素，i该属性可以是任何值</td>
+</tr>
+<tr>
+<td>$(“[attributeFilter1][attributeFilterN]”)</td>
+<td>选择匹配所有指定的屈性筛选器的元素</td>
+</tr>
+</tbody></table>
+<p><em><em>在这么多属性选择器中[attr&#x3D;”value”]和[attr</em>&#x3D;”value”]是最实用的</em>*</p>
+<p>[attr&#x3D;”value”]能帮我们定位不同类型的元素，特别是表单form元素的操作，比如说input[type&#x3D;”text”],input[type&#x3D;”checkbox”]等</p>
+<p>[attr*&#x3D;”value”]能在网站中帮助我们匹配不同类型的文件</p>
+<hr>
+<h3 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h3><h3 id="表单元素选择器"><a href="#表单元素选择器" class="headerlink" title="表单元素选择器"></a>表单元素选择器</h3><p>无论是提交还是传递数据，表单元素在动态交互页面的作用是非常重要的。jQuery中专门加入了表单选择器，从而能够极其方便地获取到某个类型的表单元素。</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(“:input”)</td>
+<td>选择所有input,textarea,select和button元素</td>
+</tr>
+<tr>
+<td>$(“:text”)</td>
+<td>匹配所有文本框</td>
+</tr>
+<tr>
+<td>$(“:password”)</td>
+<td>匹配所有密码框</td>
+</tr>
+<tr>
+<td>$(“:radio”)</td>
+<td>匹配所有单选按钮</td>
+</tr>
+<tr>
+<td>$(“:checkbox”)</td>
+<td>匹配所有复选框</td>
+</tr>
+<tr>
+<td>$(“:submit”)</td>
+<td>匹配所有提交按钮</td>
+</tr>
+<tr>
+<td>$(“:image”)</td>
+<td>匹配所有图像域</td>
+</tr>
+<tr>
+<td>$(“:reset”)</td>
+<td>匹配所有重置按钮</td>
+</tr>
+<tr>
+<td>$(“:button”)</td>
+<td>匹配所有按钮</td>
+</tr>
+<tr>
+<td>$(“:file”)</td>
+<td>匹配所有文件域</td>
+</tr>
+</tbody></table>
+<p>除了input筛选选择器，几乎每个表单类别筛选器都对应一个input元素的type值。</p>
+<p>大部分表单类别筛选器可以使用属性筛选器替换。比如 $(‘:password’) &#x3D;&#x3D; $(‘[type&#x3D;password]’)</p>
+<hr>
+<h3 id="表单元素属性筛选-选择器"><a href="#表单元素属性筛选-选择器" class="headerlink" title="表单元素属性筛选-选择器"></a>表单元素属性筛选-选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(“;enabled”)</td>
+<td>选取可用的表单元素</td>
+</tr>
+<tr>
+<td>$(“:disabled”)</td>
+<td>选取不可用的表单元素</td>
+</tr>
+<tr>
+<td>$(“:checked”)</td>
+<td>选取被选中的<input>元素</td>
+</tr>
+<tr>
+<td>$(“:selected”)</td>
+<td>选取被选中的<option>元素</td>
+</tr>
+</tbody></table>
+<p>表单元素属性筛选-选择器也是专门针对表单元素的选择器，可以附加在其他选择器的后面，主要功能是对所选择的表单元素进行筛选。</p>
+<ol>
+<li>选择器适用于复选框和单选框，<strong>对于下拉框元素, 使用 :selected 选择器</strong></li>
+<li>在某些浏览器中，选择器:checked可能会错误选取到<option>元素，所以保险起见换用选择器input:checked，确保只会选取<input>元素</li>
+</ol>
+<hr>
+<h3 id="特殊选择器-this"><a href="#特殊选择器-this" class="headerlink" title="特殊选择器-this"></a>特殊选择器-this</h3><p>相信很多刚接触jQuery的人，很多都会对$(this)和this的区别模糊不清，<strong>那么这两者有什么区别呢？</strong></p>
+<p>this是JavaScript中的关键字，指的是当前的上下文对象，简单的说就是方法&#x2F;属性的所有者。</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 下面例子中，imooc是一个对象，拥有name属性与getName方法,在getName中this指向了所属的对象imooc</span>
+<span class="token keyword">var</span> imooc <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">"慕课网"</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">getName</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//this,就是imooc对象</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+imooc<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//慕课网</span></code></pre>
+
+<p>当然在JavaScript中this是动态的，也就是说这个上下文对象都是可以被动态改变的(可以通过call,apply等方法)，具体的大家可以查阅相关资料。</p>
+<p>同样的在DOM中this就是指向了这个html元素对象，因为this就是DOM元素本身的一个引用</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token comment">// 假如给页面一个P元素绑定一个事件:</span>
+p<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// this === p</span>
+    <span class="token comment">// 以下两者的修改都是等价的</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span>
+    p<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// 通过addEventListener绑定的事件回调中，this指向的是当前的dom对象，所以再次修改这样对象的样式，只需要通过this获取到引用即可</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"red"</span>
+	<span class="token comment">// 但是这样的操作其实还是很不方便的，这里面就要涉及一大堆的样式兼容，如果通过jQuery处理就会简单多了，我们只需要把this加工成jQuery对象</span></code></pre>
+
+<p>换成jQuery的做法：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//把p元素转化成jQuery的对象</span>
+    <span class="token keyword">var</span> $<span class="token keyword">this</span><span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> 
+    $<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'color'</span><span class="token punctuation">,</span><span class="token string">'red'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment">// 通过把$()方法传入当前的元素对象的引用this，把这个this加工成jQuery对象，我们就可以用jQuery提供的快捷方法直接处理样式了</span></code></pre>
+
+<p>总而言之：</p>
+<pre class="language-js" data-language="js"><code class="language-js"><span class="token keyword">this</span> 		<span class="token comment">// 表示当前的上下文对象是一个html对象，可以调用html对象所拥有的属性和方法。</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>		<span class="token comment">// 代表的上下文对象是一个jquery的上下文对象，可以调用jQuery的方法和属性值。</span></code></pre>
+
+<h2 id="jQuery属性和样式"><a href="#jQuery属性和样式" class="headerlink" title="jQuery属性和样式"></a>jQuery属性和样式</h2></div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">靓仔or靓女，可以请我喝杯咖啡吗？.</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/20220523221203.png"><img loading="lazy" src="https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/20220523221203.png" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/20220523221130.png"><img loading="lazy" src="https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/20220523221130.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>god23bin</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://god23bin.github.io/posts/b26d2e2d/" title="jQuery-笔记">https://god23bin.github.io/posts/b26d2e2d/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless otherwise stated.</li></ul><script>document.addEventListener('copy', function (event) {
+  const clipboardData = event.clipboardData || window.clipboardData;
+  if (!clipboardData) { return; }
+  const text = window.getSelection().toString();
+  if (text) {
+    event.preventDefault();
+    clipboardData.setData('text/plain', text + '\n\nPost author: god23bin\nPost link: https://god23bin.github.io/posts/b26d2e2d/\nCopyright Notice: All articles in this blog are licensed under CC BY-NC-SA 4.0 unless otherwise stated.');
+  }
+});</script></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/posts/f3622d2c/" rel="prev" title="JSON-入门"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">JSON-入门</span></a></div><div class="post-nav-item"></div></div></div><div class="hty-card" id="comment"></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> god23bin</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v6.1.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.8.11</span></div><div class="live-time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-04-01T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = ` ${passDay} Days ${passHour} Hours ${passMinute} Minutes ${passSecond} Seconds`;
+}
+blog_live_time();
+</script></div><div id="busuanzi"><span id="busuanzi_container_site_uv" title="Total Visitors"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="Total Views"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#6200ee" stroke-width="2" stroke-linecap="round"></circle></svg></a><script>function initMourn() {
+  const date = new Date();
+  const today = (date.getMonth() + 1) + "-" + date.getDate()
+  const mourn_days = ["4-4","9-18"]
+  if (mourn_days.includes(today)) {
+    document.documentElement.style.filter = "grayscale(1)";
+  }
+}
+initMourn();</script><div class="aplayer no-destroy" id="aplayer" data-id="140834718" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay data-theme="#6200ee" data-loop="all" data-order="list" data-preload="auto" data-volume="0.7" data-mutex data-lrctype="0" data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
