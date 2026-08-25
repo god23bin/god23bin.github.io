@@ -58,12 +58,12 @@ export default defineSiteConfig({
       icon: 'i-ri-bilibili-line',
       color: '#FF8EB3',
     },
-    // {
-    //   name: '微信公众号',
-    //   link: 'https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/202503101227119.png',
-    //   icon: 'i-ri-wechat-2-line',
-    //   color: '#1AAD19',
-    // },
+    {
+      name: '微信公众号',
+      link: 'https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/202503101227119.png',
+      icon: 'i-ri-wechat-2-line',
+      color: '#1AAD19',
+    },
     // {
     //   name: 'Twitter',
     //   link: 'https://twitter.com/YunYouJun',
