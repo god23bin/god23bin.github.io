@@ -4,6 +4,7 @@ export default defineSiteConfig({
   url: 'https://god23bin.github.io/',
   lang: 'zh-CN',
   title: '方圆的小站',
+  subtitle: '流水不争先，争的是滔滔不绝',
   author: {
     name: '方圆方圆可方可圆 - Aka - 虚幻居士 | god23bin | Devil Dev',
     avatar: 'https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/202502210622606.png',
