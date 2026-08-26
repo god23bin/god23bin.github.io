@@ -5,10 +5,10 @@ export default defineSiteConfig({
   lang: 'zh-CN',
   title: '方圆的小站',
   author: {
-    name: '方圆方圆可方可圆',
+    name: '方圆方圆可方可圆 - Aka - 虚幻居士 | god23bin | Devil Dev',
     avatar: 'https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/202502210622606.png',
   },
-  description: '软件工程师，独立游戏开发者，B站UP主，喜欢折腾，喜欢分享。',
+  description: '软件工程师，独立游戏开发者，B站UP主，抖音短视频博主，喜欢折腾，喜欢分享。',
   social: [
     // {
     //   name: 'RSS',
@@ -57,6 +57,12 @@ export default defineSiteConfig({
       link: 'https://space.bilibili.com/341183781',
       icon: 'i-ri-bilibili-line',
       color: '#FF8EB3',
+    },
+    {
+      name: '抖音',
+      link: 'https://v.douyin.com/PiPOp9-6AMU/',
+      icon: 'i-logos-tiktok-icon',
+      color: '#6e5494',
     },
     {
       name: '微信公众号',
