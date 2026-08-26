@@ -10,6 +10,10 @@ export default defineSiteConfig({
     avatar: 'https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/202502210622606.png',
   },
   description: '软件工程师，独立游戏开发者，B站UP主，抖音短视频博主，喜欢折腾，喜欢分享。',
+  /**
+   * 站点图标
+   */
+  favicon: 'https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/202608261251972.svg',
   social: [
     // {
     //   name: 'RSS',
