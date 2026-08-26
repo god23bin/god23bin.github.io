@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "方圆的小站",
+    "home_page_url": "https://god23bin.github.io/",
+    "feed_url": "https://god23bin.github.io/feed.json",
+    "description": "软件工程师，独立游戏开发者，B站UP主，抖音短视频博主，喜欢折腾，喜欢分享。",
+    "icon": "https://pic-bed-of-god23bin.oss-cn-shenzhen.aliyuncs.com/img/202502210622606.png",
+    "author": {
+        "name": "方圆方圆可方可圆 - Aka - 虚幻居士 | god23bin | Devil Dev",
+        "url": "https://valaxy.site"
+    },
+    "items": []
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://god23bin.github.io/sitemap.xml
